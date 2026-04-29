@@ -36,18 +36,29 @@
     scroll-behavior: smooth;
   }
 
+  /* 🔥 الحل الحقيقي هنا */
+  html,
+  body,
+  #root {
+    height: 100%;
+    min-height: 100%;
+  }
+
   body {
     @apply font-sans antialiased;
+    margin: 0;
+    padding: 0;
 
-    /* ===== الخلفية الجديدة مع التعتيم ===== */
-    background: linear-gradient(
-        rgba(6, 6, 6, 0.75),
-        rgba(6, 6, 6, 0.85)
+    /* الخلفية + التعتيم */
+    background-image: linear-gradient(
+        rgba(6, 6, 6, 0.78),
+        rgba(6, 6, 6, 0.88)
       ),
       url("https://i.ibb.co/cXM3MQhc/Pngtree-glass-broken-texture-background-h-1035015.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 
     color: #f5f0e0;
@@ -78,77 +89,4 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #f0d060;
   }
-}
-
-@layer components {
-  .gold-text {
-    background: linear-gradient(135deg, #d4af37 0%, #f0d060 40%, #c9a030 70%, #d4af37 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gold-text-animate {
-    background: linear-gradient(135deg, #d4af37 0%, #f0d060 40%, #c9a030 70%, #d4af37 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s linear infinite;
-  }
-
-  .btn-gold {
-    @apply relative overflow-hidden font-sans font-semibold tracking-widest text-sm uppercase;
-    background: linear-gradient(135deg, #c9a030 0%, #d4af37 50%, #f0d060 100%);
-    color: #060606;
-    transition: all 0.3s ease;
-  }
-
-  .btn-gold::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-  }
-
-  .btn-gold:hover::before {
-    left: 100%;
-  }
-
-  .btn-gold:hover {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
-    transform: translateY(-1px);
-  }
-
-  .btn-outline-gold {
-    @apply relative overflow-hidden font-sans font-semibold tracking-widest text-sm uppercase border;
-    border-color: #d4af37;
-    color: #d4af37;
-    transition: all 0.3s ease;
-    background: transparent;
-  }
-
-  .btn-outline-gold:hover {
-    background: rgba(212, 175, 55, 0.1);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-  }
-
-  .card-luxury {
-    background: linear-gradient(145deg, #141414 0%, #0e0e0e 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    transition: all 0.4s ease;
-  }
-
-  .card-luxury:hover {
-    border-color: rgba(212, 175, 55, 0.5);
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.1), 0 20px 60px rgba(0, 0, 0, 0.5);
-    transform: translateY(-6px);
-  }
-
-  /* باقي الكود زي ما هو بدون تغيير */
 }
