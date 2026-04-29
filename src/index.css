@@ -38,7 +38,12 @@
 
   body {
     @apply font-sans antialiased;
-    background-color: #060606;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://png.pngtree.com/background/20240523/original/pngtree-pure-chill-ice-cubes-and-refreshing-drops-picture-image_15765461.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #f5f0e0;
   }
 
@@ -386,4 +391,5 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
 }
